@@ -26,6 +26,8 @@
   "devDependencies": {
     "LiveScript": "^1.2.0",
     "expect.js": "^0.3.1",
-    "mocha": "^1.20.1"
+    "mocha": "^1.20.1",
+    "sparkler": "^0.3.3",
+    "sweet.js": "^0.7.0"
   }
 }

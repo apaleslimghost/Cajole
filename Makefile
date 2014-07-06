@@ -1,9 +1,14 @@
+export SHELL := /bin/bash
+export PATH  := $(shell npm bin):$(PATH)
+
+SWEET_OPTS = -m sparkler/macros
+
 all: index.js
 
-%.js: %.ls
-	node_modules/.bin/lsc -c $<
+%.js: %.sjs
+	sjs $(SWEET_OPTS) --output $@ $<
 
 test: index.js
-	node_modules/.bin/mocha -r LiveScript -u exports test.ls
+	mocha -u exports test.js
 
 .PHONY: test
