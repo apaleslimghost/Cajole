@@ -14,6 +14,11 @@ exports.Cajole = {
 		'from objects to JSON': function() {
 			var convert = cajole(String);
 			expect(convert({foo: "bar", baz: 5})).to.be('{"foo":"bar","baz":5}');
+		},
+		'from primitives': function() {
+			var convert = cajole(String);
+			expect(convert(5)).to.be('5');
+			expect(convert(true)).to.be('true');
 		}
 	},
 	'should convert numbers': function() {
