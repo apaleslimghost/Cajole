@@ -19,6 +19,13 @@ exports.Cajole = {
 		expect(convert(5)).to.be(5);
 		expect(convert(5.5)).to.be(5.5);
 	},
+	'should convert booleans': function() {
+		var convert = cajole(Boolean);
+		expect(convert('true')).to.be(true);
+		expect(convert('false')).to.be(false);
+		expect(convert(1)).to.be(true);
+		expect(convert(0)).to.be(false);
+	},
 	'should convert integers': function() {
 		var convert = cajole('integer');
 		expect(convert('5')).to.be(5);

@@ -15,6 +15,12 @@ function to {
 		x @ Number => Math.floor(x),
 		x => {throw new TypeError("Cannot convert " + x + " to integer");}
 	},
+	"boolean" => function toBoolean {
+		x @ Boolean => x,
+		"true"  => true,
+		"false" => false,
+		x => !!x
+	},
 	[...xs] => function toArray(vs) {
 		return xs.map(λ(x, i) -> module.exports(x)(vs[i]));
 	},
