@@ -15,6 +15,9 @@ function to {
 		x @ Number => Math.floor(x),
 		x => {throw new TypeError("Cannot convert " + x + " to integer");}
 	},
+	[...xs] => function toArray(vs) {
+		return xs.map(λ(x, i) -> module.exports(x)(vs[i]));
+	},
 	x @ Object => function toObject(obj) {
 		var out = {};
 		for(var p in x) {

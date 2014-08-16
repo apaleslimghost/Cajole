@@ -49,5 +49,9 @@ exports.Cajole = {
 				quux: 5
 			});
 		}
+	},
+	'should traverse arrays': function() {
+		var convert = cajole([Number, String]);
+		expect(convert(['1', 'hello'])).to.eql([1, 'hello'])
 	}
 };
