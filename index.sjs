@@ -14,6 +14,13 @@ function to {
 		x @ String => parseInt(x),
 		x @ Number => Math.floor(x),
 		x => {throw new TypeError("Cannot convert " + x + " to integer");}
+	},
+	x @ Object => function toObject(obj) {
+		var out = {};
+		for(var p in x) {
+			out[p] = module.exports(x[p])(obj[p]);
+		}
+		return out;
 	}
 };
 
