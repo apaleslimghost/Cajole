@@ -21,6 +21,7 @@ function to {
 		"false" => false,
 		x => !!x
 	},
+	x @ Function => x,
 	[...xs] => function toArray(vs) {
 		return xs.map(λ(x, i) -> module.exports(x)(vs[i]));
 	},
@@ -34,6 +35,7 @@ function to {
 };
 
 function type {
+	x @ {name: ''} => x, // anonymous functions are always converters
 	x @ {name} => x.name.toLowerCase(),
 	x => x
 }

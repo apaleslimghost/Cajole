@@ -75,5 +75,9 @@ exports.Cajole = {
 	'should traverse arrays': function() {
 		var convert = cajole([Number, String]);
 		expect(convert(['1', 'hello'])).to.eql([1, 'hello'])
+	},
+	'should use conversion functions': function() {
+		var convert = cajole(function(x) { return x + 1 });
+		expect(convert(5)).to.be(6);
 	}
 };
