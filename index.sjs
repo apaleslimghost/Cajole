@@ -1,7 +1,7 @@
 function to {
 	"string" => function toString {
 		x @ String => x,
-		x @ {toJson:   Function} => JSON.stringify(x),
+		x @ Array  => JSON.stringify(x),
 		x @ {toString: Function} => x.toString(),
 		x => {throw new TypeError("Cannot convert " + x + " to string (except I just did lol)");}
 	},

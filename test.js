@@ -7,6 +7,10 @@ exports.Cajole = {
 			var convert = cajole(String);
 			expect(convert({toString: function() {return 'hello'}})).to.be('hello');
 		},
+		'from arrays to JSON': function() {
+			var convert = cajole(String);
+			expect(convert([1,"a",false])).to.be('[1,"a",false]');
+		}
 	},
 	'should convert numbers': function() {
 		var convert = cajole(Number);
