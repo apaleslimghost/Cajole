@@ -11,6 +11,11 @@ exports.Cajole = {
 		expect(convert('5')).to.be(5);
 		expect(convert('5.5')).to.be(5.5);
 	},
+	'should convert integers': function() {
+		var convert = cajole('integer');
+		expect(convert('5')).to.be(5);
+		expect(convert('5.5')).to.be(5);
+	},
 	'should traverse objects': {
 		'single level': function() {
 			var convert = cajole({
