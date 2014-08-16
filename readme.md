@@ -1,4 +1,4 @@
-# Cajole
+# Cajole [![Build Status](https://travis-ci.org/quarterto/Cajole.svg)](https://travis-ci.org/quarterto/Cajole)
 
 Coax data into formats
 
