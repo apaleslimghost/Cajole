@@ -1,6 +1,6 @@
 {
   "name": "cajole",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "coax data into formats",
   "main": "index.js",
   "scripts": {
