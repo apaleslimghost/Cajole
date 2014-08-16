@@ -70,6 +70,10 @@ exports.Cajole = {
 				},
 				quux: 5
 			});
+		},
+		'with a name property is not treated as a type': function() {
+			var convert = cajole({name: String});
+			expect(convert({name: 'string'})).to.eql({name: 'string'});
 		}
 	},
 	'should traverse arrays': function() {

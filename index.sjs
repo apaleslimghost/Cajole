@@ -36,7 +36,7 @@ function to {
 
 function type {
 	x @ {name: ''} => x, // anonymous functions are always converters
-	x @ {name} => x.name.toLowerCase(),
+	x @ Function   => x.name.toLowerCase(),
 	x => x
 }
 
