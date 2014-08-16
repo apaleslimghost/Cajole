@@ -28,8 +28,7 @@ function to {
 };
 
 function type {
-	x if x === String => "string",
-	x if x === Number => "number",
+	x @ {name} => x.name.toLowerCase(),
 	x => x
 }
 
