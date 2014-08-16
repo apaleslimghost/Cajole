@@ -10,6 +10,10 @@ exports.Cajole = {
 		'from arrays to JSON': function() {
 			var convert = cajole(String);
 			expect(convert([1,"a",false])).to.be('[1,"a",false]');
+		},
+		'from objects to JSON': function() {
+			var convert = cajole(String);
+			expect(convert({foo: "bar", baz: 5})).to.be('{"foo":"bar","baz":5}');
 		}
 	},
 	'should convert numbers': function() {

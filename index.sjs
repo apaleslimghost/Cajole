@@ -2,7 +2,8 @@ function to {
 	"string" => function toString {
 		x @ String => x,
 		x @ Array  => JSON.stringify(x),
-		x @ {toString: Function} => x.toString(),
+		x @ {toString: Function} if x.toString !== Object.prototype.toString => x.toString(),
+		x @ Object => JSON.stringify(x),
 		x => {throw new TypeError("Cannot convert " + x + " to string (except I just did lol)");}
 	},
 	"number" => function toNumber {
